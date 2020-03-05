@@ -4,7 +4,7 @@ var tbody = d3.select('tbody')
 
 // CInitial Load of Table
 
-/*data.forEach(function(sighting){
+data.forEach(function(sighting){
 
 	var row = tbody.append('tr');
 
@@ -13,7 +13,8 @@ var tbody = d3.select('tbody')
 			cell.text(value);
 
 		});
-	});*/
+	});
+
 
 
  // Filter User Action
@@ -30,9 +31,9 @@ var tbody = d3.select('tbody')
 
   var inputValue = inputElement.property('value');
 
-  console.log(inputValue);
-
   var filteredSightings = tableData.filter( sighting => sighting.datetime === inputValue)
+  
+  d3.selectAll('td').remove();
 
 filteredSightings.forEach(function(sighting){
 
